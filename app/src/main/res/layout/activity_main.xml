@@ -45,6 +45,7 @@
                 android:textAlignment="center"
                 android:textSize="21sp"
                 android:textColor="#A3BBE8"
+                android:layout_marginTop="10dp"
                 />
 
             <Spinner
