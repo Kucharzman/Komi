@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrCitiesNames">
+        <item>Gdynia</item>
+        <item>Hel</item>
+        <item>Wejherowo</item>
+        <item>Słupsk</item>
+        <item>Żukowo</item>
+        <item>Sulęczyno</item>
+        <item>Tczew</item>
+        <item>Chojnice</item>
+    </string-array>
+</resources>

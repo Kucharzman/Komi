@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">tsp</string>
+
+    <string name="strChooseCity">Wybierz miasto startowe:</string>
+
+
 </resources>

@@ -18,6 +18,57 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <ImageView
+            android:id="@+id/ivMap"
+            android:layout_width="wrap_content"
+            android:layout_height="850px"
+            app:srcCompat="@drawable/mapa"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvStartingCity"
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:text="@string/strChooseCity"
+                android:textAlignment="center"
+                android:textSize="21sp"
+                android:textColor="#A3BBE8"
+                />
+
+            <Spinner
+                android:id="@+id/spnStartingCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#A3BBE8"
+                android:entries="@array/arrCitiesNames"
+                android:foregroundTint="#A3BBE8"
+                android:foregroundTintMode="screen"
+                android:popupBackground="#A3BBE8" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bttTSP"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:text="KOMIWOJAŻEROWANIE"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#A3BBE8"
+            android:textColor="#313131"
+            />
+
+        <TextView
+            android:id="@+id/tvOutput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
+
 
     </LinearLayout>
 
