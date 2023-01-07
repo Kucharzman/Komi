@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import kotlin.math.min
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var edtDystans : EditText
     lateinit var bttDystans : Button
     lateinit var bttKomi    : Button
+    lateinit var tvOutput   : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         edtDystans = findViewById(R.id.edtDistance)
         bttDystans = findViewById(R.id.bttDistAcc)
         bttKomi = findViewById(R.id.bttTSP)
+        tvOutput = findViewById(R.id.tvOutput)
 
         val lstMiasta = List<MutableList<Int>>(8) {
             MutableList<Int>(8) { 0 }
@@ -53,6 +56,46 @@ class MainActivity : AppCompatActivity() {
         fun odleglosc() {
             edtDystans.setText(lstMiasta[spnMiastoStart.selectedItemId.toInt()][spnMiastoKoniec.selectedItemId.toInt()].toString())
         }
+
+        fun tsp(){
+
+            val iloscMiast = 8
+            val odwiedzone = BooleanArray(iloscMiast)
+            val droga = IntArray(iloscMiast)
+
+            var obecneMiasto = 0
+
+            odwiedzone[obecneMiasto] = true
+
+            for (i in 0 until iloscMiast - 1) {
+                var min = Int.MAX_VALUE
+                var miastoId = 0
+
+                for (j in 0 until iloscMiast) {
+                    if (!odwiedzone[j] && lstMiasta[obecneMiasto][j] < min) {
+                        min = lstMiasta[obecneMiasto][j]
+                        miastoId = j
+                    }
+                }
+
+                droga[i] = miastoId
+                odwiedzone[miastoId] = true
+            }
+
+            droga[iloscMiast-1] = 0
+
+            for (i in 0 until iloscMiast) {
+                tvOutput.append(droga[i].toString() + " -> ")
+            }
+
+            var outro = 0
+            for (i in 0 until iloscMiast - 1) {
+                outro += lstMiasta[droga[i]][droga[i + 1]]
+            }
+            tvOutput.append("\n")
+            tvOutput.append("Droga wynosi: " + outro.toString())
+
+        }//tsp
 
         //listenery vvv
         spnMiastoStart.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
