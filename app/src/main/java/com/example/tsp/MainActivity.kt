@@ -134,5 +134,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        bttKomi.setOnClickListener {
+            tvOutput.setText("")
+            tsp()
+        }
+
     }//onCreate
 }//MainActivity
