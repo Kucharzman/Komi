@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">tsp</string>
 
-    <string name="strChooseCity">Wybierz miasto startowe:</string>
-
+    <string name="strChooseCity">Miasto startowe:</string>
+    <string name="strChooseEndCity">Miasto końcowe:</string>
 
 </resources>

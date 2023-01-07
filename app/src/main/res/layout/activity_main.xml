@@ -24,13 +24,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/ivMap"
-            android:layout_width="wrap_content"
-            android:layout_height="850px"
-            app:srcCompat="@drawable/mapa"
-            android:layout_marginTop="10dp"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="180px"
@@ -56,25 +49,100 @@
                 android:entries="@array/arrCitiesNames"
                 android:foregroundTint="#A3BBE8"
                 android:foregroundTintMode="screen"
-                android:popupBackground="#A3BBE8" />
+                android:popupBackground="#A3BBE8"
+                />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvEndCity"
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:text="@string/strChooseEndCity"
+                android:textAlignment="center"
+                android:textSize="21sp"
+                android:textColor="#A3BBE8"
+                android:layout_marginTop="10dp"
+                />
+
+            <Spinner
+                android:id="@+id/spnEndCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#A3BBE8"
+                android:entries="@array/arrCitiesNames"
+                android:foregroundTint="#A3BBE8"
+                android:foregroundTintMode="screen"
+                android:popupBackground="#A3BBE8"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:text="Dystans:"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textColor="#A3BBE8"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edtDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:backgroundTint="#A3BBE8"
+                android:textColor="#A3BBE8"
+                android:textSize="25sp"
+                android:text="0"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bttDistAcc"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:backgroundTint="#A3BBE8"
+            android:text="Zatwierdź dystans"
+            android:textColor="#313131" />
 
         <Button
             android:id="@+id/bttTSP"
             android:layout_width="match_parent"
             android:layout_height="200px"
-            android:text="KOMIWOJAŻEROWANIE"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:backgroundTint="#A3BBE8"
-            android:textColor="#313131"
-            />
+            android:text="KOMIWOJAŻEROWANIE"
+            android:textColor="#313131" />
 
         <TextView
             android:id="@+id/tvOutput"
             android:layout_width="match_parent"
-            android:layout_height="800px"
-            android:text="" />
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#A3BBE8"
+            android:textAlignment="center"
+            />
 
 
     </LinearLayout>
